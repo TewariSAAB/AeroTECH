@@ -23,7 +23,6 @@ namespace AeroTECH
             try
             {
                 string fileName = textBoxFileName.Text.Trim();
-                string filepath = textBoxFileName.Text.Trim();
                 DateTime uploadDate = dateTimePickerUploadDate.Value;
                 int projectId;
 
@@ -33,13 +32,6 @@ namespace AeroTECH
                     return;
                 }
 
-                if (string.IsNullOrEmpty(filepath))
-                {
-                    MessageBox.Show("File Name is required.");
-                    return;
-                }
-
-
                 if (!int.TryParse(textBoxProjectID.Text, out projectId))
                 {
                     MessageBox.Show("Please enter a valid Project ID.");
@@ -47,7 +39,7 @@ namespace AeroTECH
                 }
 
                 ProjectFileCRUD fileCrud = new ProjectFileCRUD();
-                fileCrud.AddProjectFile(projectId, fileName, filepath, uploadDate);
+                fileCrud.AddProjectFile(projectId, fileName, uploadDate);
 
                 LoadProjectFilesData();
                 ClearForm();
@@ -71,7 +63,6 @@ namespace AeroTECH
                 }
 
                 string fileName = textBoxFileName.Text.Trim();
-                string filepath = textBoxFileName.Text.Trim();
                 DateTime uploadDate = dateTimePickerUploadDate.Value;
                 int projectId;
 
@@ -88,7 +79,7 @@ namespace AeroTECH
                 }
 
                 ProjectFileCRUD fileCrud = new ProjectFileCRUD();
-                fileCrud.UpdateProjectFile(fileId, projectId, fileName, filepath, uploadDate);
+                fileCrud.UpdateProjectFile(fileId, projectId, fileName, uploadDate);
 
                 LoadProjectFilesData();
                 ClearForm();

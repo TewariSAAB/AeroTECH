@@ -32,7 +32,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridViewProjects).BeginInit();
             SuspendLayout();
             // 
-            // textBoxProjectID
+            // textBoxProjectID a
             // 
             textBoxProjectID.Location = new Point(117, 27);
             textBoxProjectID.Name = "textBoxProjectID";
